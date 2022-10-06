@@ -1,0 +1,24 @@
+<div class="container my-5">
+    <h1 class="mb-3">Products</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.price}}</td>
+                <td><a [routerLink]="['/product','edit', product.id]">View</a></td>
+            </tr>
+        </tbody>
+
+    </table>
+    <p *ngIf="products.length == 0">No records found</p>
+</div>
